@@ -1,0 +1,13 @@
+transaction_id,transaction_date,customer_name,customer_email,customer_phone,waste_type,weight,price_per_kg,total_amount,status,notes
+"12","2025-09-19 11:47:46","Budi Santoso","customer3@example.com","081234567894","Kertas","1.5","2000","3000","completed","Kertas dan koran bekas"
+"11","2025-09-19 11:47:46","Budi Santoso","customer3@example.com","081234567894","Kardus","2","2500","5000","completed","Kardus bekas"
+"10","2025-09-19 11:47:46","Siti Rahayu","customer2@example.com","081234567893","Kaleng Aluminium","0.5","8000","4000","completed","Kaleng minuman"
+"9","2025-09-19 11:47:46","Siti Rahayu","customer2@example.com","081234567893","Botol Plastik","3","3000","9000","completed","Botol plastik berbagai ukuran"
+"8","2025-09-19 11:47:46","Ahmad Suryadi","customer1@example.com","081234567892","Kardus","1","2500","2500","completed","Kardus kemasan"
+"7","2025-09-19 11:47:46","Ahmad Suryadi","customer1@example.com","081234567892","Botol Plastik","2.5","3000","7500","completed","Botol plastik dari rumah tangga"
+"6","2025-09-19 11:05:59","Budi Santoso","customer3@example.com","081234567894","Kertas","1.5","2000","3000","completed","Kertas dan koran bekas"
+"5","2025-09-19 11:05:59","Budi Santoso","customer3@example.com","081234567894","Kardus","2","2500","5000","completed","Kardus bekas"
+"4","2025-09-19 11:05:59","Siti Rahayu","customer2@example.com","081234567893","Kaleng Aluminium","0.5","8000","4000","completed","Kaleng minuman"
+"3","2025-09-19 11:05:59","Siti Rahayu","customer2@example.com","081234567893","Botol Plastik","3","3000","9000","completed","Botol plastik berbagai ukuran"
+"2","2025-09-19 11:05:59","Ahmad Suryadi","customer1@example.com","081234567892","Kardus","1","2500","2500","completed","Kardus kemasan"
+"1","2025-09-19 11:05:59","Ahmad Suryadi","customer1@example.com","081234567892","Botol Plastik","2.5","3000","7500","completed","Botol plastik dari rumah tangga"

@@ -261,7 +261,7 @@
 ### 🚀 LIVE SYSTEM
 - **Server**: Running on http://localhost:3000
 - **Database**: Initialized with sample data
-- **Default Accounts**: 
+- **Default Accounts**:
   - Admin: admin@banksampah.com / admin123
   - Operator: operator@banksampah.com / operator123
   - Customer: customer1@example.com / customer123

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Sampah - Sistem Transaksi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🏦 Bank Sampah</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-page="home">Beranda</a>
+                <a href="#login" class="nav-link" data-page="login" id="login-link">Masuk</a>
+                <a href="#register" class="nav-link" data-page="register" id="register-link">Daftar</a>
+                <a href="#dashboard" class="nav-link" data-page="dashboard" id="dashboard-link" style="display: none;">Dashboard</a>
+                <a href="#transactions" class="nav-link" data-page="transactions" id="transactions-link" style="display: none;">Transaksi</a>
+                <a href="#admin" class="nav-link" data-page="admin" id="admin-link" style="display: none;">Panel</a>
+                <a href="#" class="nav-link" id="logout-link" style="display: none;">Keluar</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Selamat Datang di Bank Sampah</h1>
+                    <p>Sistem manajemen transaksi sampah yang mudah dan efisien</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-action="register">Daftar Sekarang</button>
+                        <button class="btn btn-secondary" data-action="login">Masuk</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="container">
+                    <h2>Fitur Utama</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Dashboard Transaksi</h3>
+                            <p>Pantau semua transaksi sampah Anda dengan mudah</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💰</div>
+                            <h3>Perhitungan Otomatis</h3>
+                            <p>Harga sampah dihitung otomatis berdasarkan berat per kg</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>Akses Mudah</h3>
+                            <p>Gunakan sistem ini di mana saja, kapan saja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login-page" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2>Masuk ke Akun Anda</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Masuk</button>
+                    </form>
+                    <p class="auth-switch">
+                        Belum punya akun? <a href="#" data-action="register">Daftar di sini</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register Page -->
+        <section id="register-page" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2>Daftar Akun Baru</h2>
+                    <form id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-firstname">Nama Depan</label>
+                                <input type="text" id="register-firstname" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-lastname">Nama Belakang</label>
+                                <input type="text" id="register-lastname" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-phone">Nomor Telepon</label>
+                            <input type="tel" id="register-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="register-address">Alamat</label>
+                            <textarea id="register-address" name="address" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Daftar</button>
+                    </form>
+                    <p class="auth-switch">
+                        Sudah punya akun? <a href="#" data-action="login">Masuk di sini</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <p>Selamat datang, <span id="user-name"></span>!</p>
+                </div>
+
+                <div class="dashboard-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon">💰</div>
+                        <div class="summary-content">
+                            <h3>Total Penghasilan</h3>
+                            <p class="summary-value" id="total-earnings">Rp 0</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">📦</div>
+                        <div class="summary-content">
+                            <h3>Total Transaksi</h3>
+                            <p class="summary-value" id="total-deposits">0</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">📅</div>
+                        <div class="summary-content">
+                            <h3>Transaksi Terakhir</h3>
+                            <p class="summary-value" id="last-transaction">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary" data-action="transactions">
+                        Lihat Semua Transaksi
+                    </button>
+                    <button class="btn btn-secondary" data-action="refresh-dashboard">
+                        Refresh Data
+                    </button>
+                    <button class="btn btn-info" data-action="admin-panel" id="admin-panel-btn" style="display: none;">
+                        Panel Admin/Operator
+                    </button>
+                </div>
+
+                <div class="recent-transactions">
+                    <h2>Transaksi Terbaru</h2>
+                    <div id="recent-transactions-list">
+                        <p class="no-data">Belum ada transaksi</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-charts">
+                    <h2>Analisis Data</h2>
+                    <div class="charts-grid">
+                        <div class="chart-section">
+                            <div id="daily-earnings-chart">
+                                <!-- Daily earnings chart will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="chart-section">
+                            <div id="waste-type-distribution">
+                                <!-- Waste type distribution will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="chart-section">
+                            <div id="monthly-comparison">
+                                <!-- Monthly comparison will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel -->
+        <section id="admin-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Admin Panel</h1>
+                    <div class="admin-tabs">
+                        <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+                        <button class="tab-btn" data-tab="reports">Reports</button>
+                        <button class="tab-btn admin-only" data-tab="users">User Management</button>
+                        <button class="tab-btn admin-only" data-tab="waste-types">Waste Types</button>
+                    </div>
+                </div>
+
+                <!-- Admin Dashboard Tab -->
+                <div id="admin-dashboard-tab" class="admin-tab-content active">
+                    <div class="admin-stats" id="admin-stats">
+                        <!-- Stats will be loaded here -->
+                    </div>
+                    <div class="recent-activity">
+                        <h2>Aktivitas Terbaru</h2>
+                        <div id="recent-activity">
+                            <!-- Recent activity will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Management Tab -->
+                <div id="admin-users-tab" class="admin-tab-content">
+                    <div class="admin-section-header">
+                        <h2>User Management</h2>
+                        <button class="btn btn-primary" data-action="create-user">
+                            Tambah User Baru
+                        </button>
+                    </div>
+                    <div class="users-list" id="users-list">
+                        <!-- Users will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Waste Type Management Tab -->
+                <div id="admin-waste-types-tab" class="admin-tab-content">
+                    <div class="admin-section-header">
+                        <h2>Waste Type Management</h2>
+                        <button class="btn btn-primary" data-action="create-waste-type">
+                            Tambah Jenis Sampah Baru
+                        </button>
+                    </div>
+                    <div class="waste-types-list" id="waste-types-list">
+                        <!-- Waste types will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div id="admin-reports-tab" class="admin-tab-content">
+                    <div class="reports-header">
+                        <h2>Laporan Sistem</h2>
+                        <div class="reports-controls">
+                            <div class="date-range">
+                                <input type="date" id="start-date" placeholder="Tanggal Mulai">
+                                <input type="date" id="end-date" placeholder="Tanggal Akhir">
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn btn-secondary" data-action="export-csv">
+                                    Export CSV
+                                </button>
+                                <button class="btn btn-primary" data-action="refresh-report">
+                                    Refresh
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-tabs">
+                        <button class="report-tab-btn active" data-report-tab="overview">Overview</button>
+                        <button class="report-tab-btn" data-report-tab="financial">Keuangan</button>
+                        <button class="report-tab-btn" data-report-tab="user-activity">Aktivitas User</button>
+                    </div>
+                    
+                    <div class="reports-content" id="reports-content">
+                        <!-- Reports will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transactions Page -->
+        <section id="transactions-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Riwayat Transaksi</h1>
+                    <button class="btn btn-primary" data-action="new-transaction">
+                        Transaksi Baru
+                    </button>
+                </div>
+
+                <div id="new-transaction-form" class="transaction-form" style="display: none;">
+                    <h2>Transaksi Baru</h2>
+                    <form id="transaction-form">
+                        <div class="form-group">
+                            <label for="transaction-waste-type">Jenis Sampah</label>
+                            <select id="transaction-waste-type" name="wasteTypeId" required>
+                                <option value="">Pilih jenis sampah</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-weight">Berat (kg)</label>
+                            <input type="number" id="transaction-weight" name="weight" step="0.001" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-price">Harga per kg</label>
+                            <input type="number" id="transaction-price" name="pricePerKg" step="0.01" min="0" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-total">Total Harga</label>
+                            <input type="number" id="transaction-total" name="totalAmount" step="0.01" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-notes">Catatan</label>
+                            <textarea id="transaction-notes" name="notes" rows="3"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Simpan Transaksi</button>
+                            <button type="button" class="btn btn-secondary" data-action="cancel-transaction">Batal</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="transactions-list">
+                    <div class="transactions-filters">
+                        <input type="text" id="search-transactions" placeholder="Cari transaksi...">
+                        <select id="filter-waste-type">
+                            <option value="">Semua jenis sampah</option>
+                        </select>
+                        <select id="filter-status">
+                            <option value="">Semua status</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Selesai</option>
+                            <option value="cancelled">Dibatalkan</option>
+                        </select>
+                    </div>
+                    <div id="transactions-list">
+                        <p class="no-data">Memuat transaksi...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Memuat...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/transactions.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

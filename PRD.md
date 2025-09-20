@@ -3,10 +3,10 @@
 
 ### 1. Executive Summary
 
-**Product Name:** Bank Sampah Transaction System  
-**Version:** 1.0  
-**Date:** December 2024  
-**Target Users:** Waste bank operators, customers, and administrators  
+**Product Name:** Bank Sampah Transaction System
+**Version:** 1.0
+**Date:** December 2024
+**Target Users:** Waste bank operators, customers, and administrators
 
 The Bank Sampah Transaction System is a web-based application designed to manage waste bank transactions, allowing users to deposit various types of recyclable materials (bottles, cardboard, cans, etc.) and track their transactions through a user dashboard.
 
@@ -351,6 +351,6 @@ The Bank Sampah Transaction System will provide a comprehensive solution for man
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** December 2024  
+**Document Version:** 1.0
+**Last Updated:** December 2024
 **Next Review:** January 2025
